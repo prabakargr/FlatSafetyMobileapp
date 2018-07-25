@@ -1,3 +1,15 @@
 page-home {
 
+    .menudivider {
+        border-bottom: 1px solid #eee;
+        height: 1px;
+        margin: 15px;
+        width: 90%;
+    }
+    .hide {
+        display: none;
+    }
+.header-ios .toolbar-ios:last-child .toolbar-background-ios {
+    border-width: 0;
+}
 }

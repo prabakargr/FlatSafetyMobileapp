@@ -1,15 +1,14 @@
 <ion-menu [content]="content">
     <ion-content>
-        <div class="userdetails">
+        <!-- <div class="userdetails">
             <img src="./assets/imgs/default.png" />
-        </div>
+        </div> -->
         <ion-list>
-            <button menuClose ion-item (click)="openPage('home')">
-              Home
+            <button menuClose ion-item (click)="openPage('dashboard')">
+              Dashboard
             </button>
         </ion-list>
     </ion-content>
-
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

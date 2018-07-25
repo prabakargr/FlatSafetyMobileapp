@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
-import {RegisterPage} from '../register/register'
+import {RegisterPage} from '../register/register';
+import {LandingpagePage} from '../landingpage/landingpage';
 
 /**
  * Generated class for the LoginPage page.
@@ -25,6 +26,9 @@ export class LoginPage {
   }
   register(){
     this.nav.setRoot(RegisterPage);
+  }
+  dashboard(){
+    this.nav.setRoot(LandingpagePage);
   }
 
 }
