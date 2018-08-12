@@ -9,6 +9,12 @@ import { HomePage } from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
 import {RegisterPage} from '../pages/register/register';
 import {LandingpagePage} from '../pages/landingpage/landingpage';
+import {MaintenancePage} from '../pages/maintenance/maintenance';
+import {NewPage}from '../pages/maintenance/new/new';
+import {OldPage} from '../pages/maintenance/old/old'
+import {RiseRequestPage} from '../pages/rise-request/rise-request';
+import {NewRequestPage} from '../pages/rise-request/new-request/new-request';
+import {OldRequestsPage} from '../pages/rise-request/old-requests/old-requests'
 
 @NgModule({
   declarations: [
@@ -16,7 +22,13 @@ import {LandingpagePage} from '../pages/landingpage/landingpage';
     HomePage,
     LoginPage,
     RegisterPage,
-    LandingpagePage
+    LandingpagePage,
+    MaintenancePage,
+    NewPage,
+    OldPage,
+    RiseRequestPage,
+    NewRequestPage,
+    OldRequestsPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +40,13 @@ import {LandingpagePage} from '../pages/landingpage/landingpage';
     HomePage,
     LoginPage,
     RegisterPage,
-    LandingpagePage
+    LandingpagePage,
+    MaintenancePage,
+    NewPage,
+    OldPage,
+    RiseRequestPage,
+    NewRequestPage,
+    OldRequestsPage
   ],
   providers: [
     StatusBar,

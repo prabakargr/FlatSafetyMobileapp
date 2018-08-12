@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
-import {MaintenancePage} from '../maintenance/maintenance' 
-import {RiseRequestPage} from '../rise-request/rise-request'
+import {NewPage} from './new/new' 
+import {OldPage} from './old/old'
 
 /**
- * Generated class for the LandingpagePage page.
+ * Generated class for the MaintenancePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -13,22 +13,22 @@ import {RiseRequestPage} from '../rise-request/rise-request'
 
 @IonicPage()
 @Component({
-  selector: 'page-landingpage',
-  templateUrl: 'landingpage.html',
+  selector: 'page-maintenance',
+  templateUrl: 'maintenance.html',
 })
-export class LandingpagePage {
+export class MaintenancePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public nav:Nav) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LandingpagePage');
+    console.log('ionViewDidLoad MaintenancePage');
   }
-  maintenace(){
-    this.nav.setRoot(MaintenancePage);
+  newpage(){
+    this.nav.setRoot(NewPage);
   }
-  riseRequest(){
-    this.nav.setRoot(RiseRequestPage);
+  oldpage(){
+    this.nav.setRoot(OldPage);
   }
 
 }

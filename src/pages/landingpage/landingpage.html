@@ -22,5 +22,26 @@
 
 
 <ion-content padding>
-
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 align='center'>
+                <ion-icon name="hammer" class="iconDash" (click)="maintenace()"></ion-icon>
+                <span>Maintenace</span>
+            </ion-col>
+            <ion-col col-6 align='center'>
+                <ion-icon name="hand" class="iconDash" (click)="riseRequest()"></ion-icon>
+                <span>Request</span>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6 align='center'>
+                <ion-icon name="paper-outline" class="iconDash"></ion-icon>
+                <span>News</span>
+            </ion-col>
+            <ion-col col-6 align='center'>
+                <ion-icon name="ios-bookmark" class="iconDash"></ion-icon>
+                <span>Complaints</span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
