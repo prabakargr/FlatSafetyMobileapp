@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import {MaintenancePage} from '../maintenance/maintenance' 
 import {RiseRequestPage} from '../rise-request/rise-request'
+import {NewsPage} from '../news/news';
+import {ComplaintsPage} from '../complaints/complaints';
 
 /**
  * Generated class for the LandingpagePage page.
@@ -29,6 +31,12 @@ export class LandingpagePage {
   }
   riseRequest(){
     this.nav.setRoot(RiseRequestPage);
+  }
+  newsUpdates(){
+    this.nav.setRoot(NewsPage);
+  }
+  complaints(){
+    this.nav.setRoot(ComplaintsPage);
   }
 
 }

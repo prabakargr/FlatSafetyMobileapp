@@ -15,7 +15,14 @@ import {NewPage}from '../pages/maintenance/new/new';
 import {OldPage} from '../pages/maintenance/old/old'
 import {RiseRequestPage} from '../pages/rise-request/rise-request';
 import {NewRequestPage} from '../pages/rise-request/new-request/new-request';
-import {OldRequestsPage} from '../pages/rise-request/old-requests/old-requests'
+import {OldRequestsPage} from '../pages/rise-request/old-requests/old-requests';
+import {NewsPage} from '../pages/news/news';
+import {NewNewsPage} from '../pages/news/new-news/new-news';
+import {OldNewsPage} from '../pages/news/old-news/old-news';
+import {ComplaintsPage} from '../pages/complaints/complaints';
+import {NewComplaintsPage} from '../pages/complaints/new-complaints/new-complaints';
+import {OldComplaintsPage}from '../pages/complaints/old-complaints/old-complaints';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +37,13 @@ import {OldRequestsPage} from '../pages/rise-request/old-requests/old-requests'
     OldPage,
     RiseRequestPage,
     NewRequestPage,
-    OldRequestsPage
+    OldRequestsPage,
+    NewsPage,
+    NewNewsPage,
+    OldNewsPage,
+    ComplaintsPage,
+    NewComplaintsPage,
+    OldComplaintsPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +62,13 @@ import {OldRequestsPage} from '../pages/rise-request/old-requests/old-requests'
     OldPage,
     RiseRequestPage,
     NewRequestPage,
-    OldRequestsPage
+    OldRequestsPage,
+    NewsPage,
+    NewNewsPage,
+    OldNewsPage,
+    ComplaintsPage,
+    NewComplaintsPage,
+    OldComplaintsPage
   ],
   providers: [
     StatusBar,

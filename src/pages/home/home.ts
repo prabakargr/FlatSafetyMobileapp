@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import {LandingpagePage} from '../landingpage/landingpage';
 import {ProfilePage}from '../profile/profile'
+import {LoginPage} from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -22,10 +23,15 @@ export class HomePage {
   case 'profile':
   this.nav.setRoot(ProfilePage);
   break;
+  // case 'logout':
+  // this.nav.setRoot(LoginPage)
   default:
   this.nav.setRoot(LandingpagePage);
   break;
 }
+}
+logout(){
+  this.nav.setRoot(LoginPage);
 }
   ionViewDidLoad(){
     this.rootPage = LandingpagePage;
