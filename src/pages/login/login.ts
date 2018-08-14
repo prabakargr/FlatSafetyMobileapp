@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
+import {HomePage} from '../home/home'
 import {RegisterPage} from '../register/register';
 import {LandingpagePage} from '../landingpage/landingpage';
 
@@ -28,7 +29,7 @@ export class LoginPage {
     this.nav.setRoot(RegisterPage);
   }
   dashboard(){
-    this.nav.setRoot(LandingpagePage);
+    this.nav.setRoot(HomePage);
   }
 
 }
