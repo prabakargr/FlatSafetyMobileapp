@@ -4,6 +4,8 @@ import { Nav } from 'ionic-angular';
 import {HomePage} from '../home/home'
 import {RegisterPage} from '../register/register';
 import {LandingpagePage} from '../landingpage/landingpage';
+import { User } from '../../module/user';
+import {AngularFireAuth} from 'angularfire2/auth'
 
 /**
  * Generated class for the LoginPage page.
@@ -18,8 +20,13 @@ import {LandingpagePage} from '../landingpage/landingpage';
   templateUrl: 'login.html',
 })
 export class LoginPage {
+ 
+   user={} as User
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public nav:Nav) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public nav:Nav,
+              private afauth:AngularFireAuth) {
   }
 
   ionViewDidLoad() {
@@ -28,8 +35,17 @@ export class LoginPage {
   register(){
     this.nav.setRoot(RegisterPage);
   }
-  dashboard(){
+  async login(user){
+    try{
+   const result = this.afauth.auth.signInWithEmailAndPassword(user.email,user.password)
+   console.log(result);
+   if(result){
     this.nav.setRoot(HomePage);
+   }
+    }
+    catch(e){
+      console.log(e)
+    }
   }
 
 }

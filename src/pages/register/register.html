@@ -18,17 +18,17 @@
         <form>
             <ion-row>
                 <ion-col col-md-12>
-                    <ion-item>
+                    <!-- <ion-item>
                         <ion-label floating>Name</ion-label>
-                        <ion-input type="text"></ion-input>
-                    </ion-item>
+                        <ion-input type="text" [(ngModel)]="register.name" name="name" ngControl="name"></ion-input>
+                    </ion-item> -->
                     <ion-item>
                         <ion-label floating>Username</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-input type="text" name="email" [(ngModel)]="user.email"></ion-input>
                     </ion-item>
                     <ion-item>
                         <ion-label floating full>Password</ion-label>
-                        <ion-input type="password"></ion-input>
+                        <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
@@ -39,7 +39,7 @@
             </ion-row> -->
             <ion-row>
                 <ion-col col-12>
-                    <button ion-button block (click)="register()">Sign Up</button>
+                    <button ion-button block (click)="register(user)">Sign Up</button>
                 </ion-col>
             </ion-row>
             <ion-row>

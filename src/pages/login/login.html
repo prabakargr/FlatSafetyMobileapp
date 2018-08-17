@@ -15,22 +15,23 @@
 
 <ion-content padding>
     <ion-grid>
+
         <form>
             <ion-row>
                 <ion-col col-md-12>
                     <ion-item>
                         <ion-label floating>Username</ion-label>
-                        <ion-input type="text"></ion-input>
+                        <ion-input type="text" name="email" [(ngModel)]="user.email"></ion-input>
                     </ion-item>
                     <ion-item>
                         <ion-label floating full>Password</ion-label>
-                        <ion-input type="password"></ion-input>
+                        <ion-input type="password" name="password" [(ngModel)]="user.password"></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
             <ion-row>
                 <ion-col col-12>
-                    <button ion-button block (click)="dashboard()">Login</button>
+                    <button ion-button block (click)="login(user)">Login</button>
                 </ion-col>
             </ion-row>
             <ion-row>
@@ -39,5 +40,6 @@
                 </ion-col>
             </ion-row>
         </form>
+
     </ion-grid>
 </ion-content>

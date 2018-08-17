@@ -22,6 +22,11 @@ import {OldNewsPage} from '../pages/news/old-news/old-news';
 import {ComplaintsPage} from '../pages/complaints/complaints';
 import {NewComplaintsPage} from '../pages/complaints/new-complaints/new-complaints';
 import {OldComplaintsPage}from '../pages/complaints/old-complaints/old-complaints';
+import { AngularFireModule } from 'angularfire2';
+import {AuthService} from '../service/auth.service';
+import { AngularFireAuthModule } from '../../node_modules/angularfire2/auth';
+import {FIREBASE_CONFIG} from './app.firebase.config'
+
 
 
 @NgModule({
@@ -47,7 +52,9 @@ import {OldComplaintsPage}from '../pages/complaints/old-complaints/old-complaint
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp(FIREBASE_CONFIG),
+    AngularFireAuthModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -73,7 +80,8 @@ import {OldComplaintsPage}from '../pages/complaints/old-complaints/old-complaint
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AuthService,
   ]
 })
 export class AppModule {}

@@ -1,20 +1,18 @@
 page-new {
-
     .list>.item-block:first-child {
         border-top: none !important;
         border-bottom: 1.55px solid orange;
     }
-    .alert-radio-inner {
-        border-color: #ffc748 !important;
- 
-    }
-    .alert-radio-label {
-        color: #ffc848 !important;
-    }
+    // .alert-radio-inner {
+    //     border-color: #ffc748 !important;
+    // }
+    // .alert-radio-label {
+    //     color: #ffc848 !important;
+    // }
     .item-ios.item-block .item-inner {
         border-bottom: 1.55px solid orange;
     }
-    .item{
+    .item {
         padding-left: 0 !important
     }
 }
