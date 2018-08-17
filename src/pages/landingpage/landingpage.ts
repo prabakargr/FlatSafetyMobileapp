@@ -38,7 +38,7 @@ export class LandingpagePage {
       }
       else{
         this.toast.create({
-          message:`could not find authendication details`,
+          message:'could not find authendication details',
           duration:3000,
         }).present()
       }
