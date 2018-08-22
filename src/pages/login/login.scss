@@ -21,7 +21,12 @@ page-login {
     height: 2.2em;
     background-color: orange;
 }
-.secondBtn{
+
+.secondBtn {
     height: 2.2em;
     background-color: #776a53;
+}
+
+.item-ios.item-block .item-inner {
+    border-bottom: 1.55px solid orange !important;
 }

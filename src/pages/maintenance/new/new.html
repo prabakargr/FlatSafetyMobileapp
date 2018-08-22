@@ -6,7 +6,7 @@
 -->
 <ion-header>
     <ion-toolbar>
-        <button ion-button>
+        <button ion-button class="primeBtn">
         <ion-icon (click)="maintenance()" name="md-arrow-back"></ion-icon>
       </button>
         <ion-title>Add new maintenance</ion-title>
@@ -23,47 +23,47 @@
     <ion-grid>
         <ion-row>
             <ion-col col-12>
-              <ion-list>
-                <ion-item>
-                  <ion-label>Category</ion-label>
-                  <ion-select [(ngModel)]="category">
-                    <ion-option value="nes">Plumping</ion-option>
-                    <ion-option value="n64">Electrical</ion-option>
-                    <ion-option value="ps">Carpendar</ion-option>
-                    <ion-option value="genesis">Civil</ion-option>
-                    <!-- <ion-option value="saturn">Sega Saturn</ion-option>
+                <ion-list>
+                    <ion-item>
+                        <ion-label>Category</ion-label>
+                        <ion-select [(ngModel)]="category">
+                            <ion-option value="nes">Plumping</ion-option>
+                            <ion-option value="n64">Electrical</ion-option>
+                            <ion-option value="ps">Carpendar</ion-option>
+                            <ion-option value="genesis">Civil</ion-option>
+                            <!-- <ion-option value="saturn">Sega Saturn</ion-option>
                     <ion-option value="snes">SNES</ion-option> -->
-                  </ion-select>
-                </ion-item>
-              </ion-list>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
             </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col col-12>
-            <ion-list>
-              <ion-item>
-                <ion-label>Sections</ion-label>
-                <ion-select [(ngModel)]="section">
-                  <ion-option value="nes">Plumping</ion-option>
-                  <ion-option value="n64">Electrical</ion-option>
-                  <ion-option value="ps">Carpendar</ion-option>
-                  <ion-option value="genesis">Civil</ion-option>
-                  <!-- <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-col col-12>
+                <ion-list>
+                    <ion-item>
+                        <ion-label>Sections</ion-label>
+                        <ion-select [(ngModel)]="section">
+                            <ion-option value="nes">Plumping</ion-option>
+                            <ion-option value="n64">Electrical</ion-option>
+                            <ion-option value="ps">Carpendar</ion-option>
+                            <ion-option value="genesis">Civil</ion-option>
+                            <!-- <ion-option value="saturn">Sega Saturn</ion-option>
                   <ion-option value="snes">SNES</ion-option> -->
-                </ion-select>
-              </ion-item>
-            </ion-list>
-          </ion-col>
-          <ion-col col-12>
-              <div type="text" class="remarkBox">
-                <ion-item>
-                  <ion-input type="text" placeholder="Remarks"></ion-input>
-                </ion-item>
-              </div>
-          </ion-col>
-          <ion-col col-12>
-            <button ion-button block >Apply</button>
-        </ion-col>
-      </ion-row>
+                        </ion-select>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+            <ion-col col-12>
+                <div type="text" class="remarkBox">
+                    <ion-item>
+                        <ion-input type="text" placeholder="Remarks"></ion-input>
+                    </ion-item>
+                </div>
+            </ion-col>
+            <ion-col col-12>
+                <button ion-button block class="primeBtn">Apply</button>
+            </ion-col>
+        </ion-row>
     </ion-grid>
 </ion-content>
