@@ -45,7 +45,7 @@ export class LoginPage {
     this.nav.setRoot(RegisterPage);
   }
   login(user){
-    this.afauth.auth.signInWithEmailAndPassword(user.email+"@test.com",user.password)
+    this.afauth.auth.signInWithEmailAndPassword(user.email,user.password)
     .then(data=>{
       console.log('got some data',this.afauth.auth.currentUser);
       this.alert('Success! You\'re logged in');
