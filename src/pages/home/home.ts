@@ -4,6 +4,7 @@ import { Nav } from 'ionic-angular';
 import {LandingpagePage} from '../landingpage/landingpage';
 import {ProfilePage}from '../profile/profile'
 import {LoginPage} from '../login/login';
+import {AngularFireAuth} from 'angularfire2/auth'
 
 @Component({
   selector: 'page-home',
@@ -12,7 +13,8 @@ import {LoginPage} from '../login/login';
 export class HomePage {
   public rootPage:any
   @ViewChild(Nav) nav: Nav;
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController,
+              private afauth:AngularFireAuth) { }
 
   openPage(page){
   switch(page){
@@ -31,7 +33,8 @@ export class HomePage {
 }
 }
 logout(){
-  this.nav.setRoot(LoginPage);
+   this.afauth.auth.signOut();
+   this.nav.setRoot(LoginPage);
 }
   ionViewDidLoad(){
     this.rootPage = LandingpagePage;
