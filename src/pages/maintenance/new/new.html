@@ -7,13 +7,13 @@
 <ion-header>
     <ion-toolbar>
         <button ion-button class="primeBtn">
-        <ion-icon (click)="maintenance()" name="md-arrow-back"></ion-icon>
-      </button>
+            <ion-icon (click)="maintenance()" name="md-arrow-back"></ion-icon>
+        </button>
         <ion-title>Add new maintenance</ion-title>
         <ion-buttons end>
             <button ion-button icon-only>
-        <ion-icon name="home"></ion-icon>
-      </button>
+                <ion-icon name="home"></ion-icon>
+            </button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
@@ -55,11 +55,12 @@
                 </ion-list>
             </ion-col>
             <ion-col col-12>
-                <div type="text" class="remarkBox">
-                    <ion-item>
-                        <ion-input type="text" placeholder="Remarks"></ion-input>
-                    </ion-item>
-                </div>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Remarks</span>
+
+                    <ion-textarea row="4">
+                    </ion-textarea>
+                </label>
             </ion-col>
             <ion-col col-12>
                 <button ion-button block class="primeBtn">Apply</button>

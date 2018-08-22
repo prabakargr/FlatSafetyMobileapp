@@ -7,18 +7,31 @@
 <ion-header>
     <ion-toolbar>
         <button ion-button class="primeBtn">
-    <ion-icon (click)="complaints()" name="md-arrow-back"></ion-icon>
-  </button>
+            <ion-icon (click)="complaints()" name="md-arrow-back"></ion-icon>
+        </button>
         <ion-title>Add new Complaint</ion-title>
         <ion-buttons end>
             <button ion-button icon-only>
-    <ion-icon name="home"></ion-icon>
-  </button>
+                <ion-icon name="home"></ion-icon>
+            </button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding>
-
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Create a complaint</span>
+                    <ion-textarea row="4">
+                    </ion-textarea>
+                </label>
+            </ion-col>
+            <ion-col col-12>
+                <button ion-button block class="primeBtn">Apply</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

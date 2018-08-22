@@ -30,3 +30,11 @@ page-login {
 .item-ios.item-block .item-inner {
     border-bottom: 1.55px solid orange !important;
 }
+
+.list>.item-block:first-child {
+    border-top: none !important;
+}
+
+ion-textarea {
+    border: 1.55px solid orange
+}

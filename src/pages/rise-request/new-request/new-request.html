@@ -7,8 +7,8 @@
 <ion-header>
     <ion-toolbar>
         <button ion-button class="primeBtn">
-        <ion-icon (click)="request()" name="md-arrow-back"></ion-icon>
-      </button>
+      <ion-icon (click)="request()" name="md-arrow-back"></ion-icon>
+    </button>
         <ion-title>Create Request</ion-title>
         <ion-buttons end>
             <button ion-button icon-only>
@@ -20,5 +20,37 @@
 
 
 <ion-content padding>
-
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label floating>Name</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label floating>Delivery Name</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12>
+                <ion-item>
+                    <ion-label floating>Contact</ion-label>
+                    <ion-input type="text"></ion-input>
+                </ion-item>
+            </ion-col>
+            <ion-col col-12>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Remarks</span>
+                  
+                    <ion-textarea row="4">
+                    </ion-textarea>
+                  </label>
+            </ion-col>
+            <ion-col col-12>
+                <button ion-button block class="primeBtn">Apply</button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
