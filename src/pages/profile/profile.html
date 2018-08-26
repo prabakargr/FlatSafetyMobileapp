@@ -23,74 +23,76 @@
 
 <ion-content padding>
     <ion-grid>
-        <ion-row>
-            <ion-col col-12 class="profileInput">
-                <ion-item>
-                    <ion-label floating>Name</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
-            </ion-col>
-            <ion-col col-12>
-                <ion-list>
+        <form (ngSubmit)="creatProfile()">
+            <ion-row>
+                <ion-col col-12 class="profileInput">
                     <ion-item>
-                        <ion-label>Category</ion-label>
-                        <ion-select [(ngModel)]="category">
-                            <ion-option value="owner">Owner</ion-option>
-                            <ion-option value="tenunt">Tenunt</ion-option>
-                        </ion-select>
+                        <ion-label floating>Name</ion-label>
+                        <ion-input type="text" [(ngModel)]="profile.name" name="name"></ion-input>
                     </ion-item>
-                </ion-list>
-            </ion-col>
-            <ion-col col-12>
-                <ion-list>
-                    <ion-item>
-                        <ion-label>Block</ion-label>
-                        <ion-select [(ngModel)]="block">
-                            <ion-option value="a">A</ion-option>
-                            <ion-option value="b">B</ion-option>
-                            <ion-option value="c">C</ion-option>
-                            <ion-option value="d">D</ion-option>
+                </ion-col>
+                <ion-col col-12>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Category</ion-label>
+                            <ion-select [(ngModel)]="category" [(ngModel)]="profile.category" name="category">
+                                <ion-option value="owner">Owner</ion-option>
+                                <ion-option value="tenunt">Tenunt</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col col-12>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Block</ion-label>
+                            <ion-select [(ngModel)]="block" [(ngModel)]="profile.block" name="block">
+                                <ion-option value="a">A</ion-option>
+                                <ion-option value="b">B</ion-option>
+                                <ion-option value="c">C</ion-option>
+                                <ion-option value="d">D</ion-option>
 
-                        </ion-select>
-                    </ion-item>
-                </ion-list>
-            </ion-col>
-            <ion-col col-12>
-                <ion-list>
-                    <ion-item>
-                        <ion-label>Floor</ion-label>
-                        <ion-select [(ngModel)]="floor">
-                            <ion-option value="first">First</ion-option>
-                            <ion-option value="second">Second</ion-option>
-                            <ion-option value="third">Third</ion-option>
-                            <ion-option value="fourth">Fourth</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col col-12>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Floor</ion-label>
+                            <ion-select [(ngModel)]="floor" [(ngModel)]="profile.floor" name="floor">
+                                <ion-option value="first">First</ion-option>
+                                <ion-option value="second">Second</ion-option>
+                                <ion-option value="third">Third</ion-option>
+                                <ion-option value="fourth">Fourth</ion-option>
 
-                        </ion-select>
-                    </ion-item>
-                </ion-list>
-            </ion-col>
-            <ion-col col-12>
-                <ion-list>
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col col-12>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Flat No</ion-label>
+                            <ion-select [(ngModel)]="flatno" [(ngModel)]="profile.flatno" name="flatno">
+                                <ion-option value="s1">s1</ion-option>
+                                <ion-option value="f1">f1</ion-option>
+                                <ion-option value="t1">t1</ion-option>
+                                <ion-option value="fo1">fo1</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col col-12 class="profileInput">
                     <ion-item>
-                        <ion-label>Flat No</ion-label>
-                        <ion-select [(ngModel)]="flatno">
-                            <ion-option value="s1">s1</ion-option>
-                            <ion-option value="f1">f1</ion-option>
-                            <ion-option value="t1">t1</ion-option>
-                            <ion-option value="fo1">fo1</ion-option>
-                        </ion-select>
+                        <ion-label floating>Contact</ion-label>
+                        <ion-input type="text" [(ngModel)]="profile.contact" name="contact"></ion-input>
                     </ion-item>
-                </ion-list>
-            </ion-col>
-            <ion-col col-12 class="profileInput">
-                <ion-item>
-                    <ion-label floating>Contact</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
-            </ion-col>
-            <ion-col col-12>
-                <button ion-button block class="primeBtn">Create</button>
-            </ion-col>
-        </ion-row>
+                </ion-col>
+                <ion-col col-12>
+                    <button ion-button block type="submit" class="primeBtn">Create</button>
+                </ion-col>
+            </ion-row>
+        </form>
     </ion-grid>
 </ion-content>

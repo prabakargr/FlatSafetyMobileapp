@@ -48,7 +48,7 @@ export class LoginPage {
     this.afauth.auth.signInWithEmailAndPassword(user.email,user.password)
     .then(data=>{
       console.log('got some data',this.afauth.auth.currentUser);
-      this.alert('Success! You\'re logged in');
+      this.alert('Success! You\'re logged in'+"<br>"+this.afauth.auth.currentUser.email);
       this.nav.setRoot(HomePage);
     })
     .catch(error=>{

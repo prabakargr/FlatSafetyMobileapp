@@ -21,50 +21,52 @@
 
 <ion-content padding>
     <ion-grid>
-        <ion-row>
-            <ion-col col-12>
-                <ion-list>
-                    <ion-item>
-                        <ion-label>Category</ion-label>
-                        <ion-select [(ngModel)]="category">
-                            <ion-option value="nes">Plumping</ion-option>
-                            <ion-option value="n64">Electrical</ion-option>
-                            <ion-option value="ps">Carpendar</ion-option>
-                            <ion-option value="genesis">Civil</ion-option>
-                            <!-- <ion-option value="saturn">Sega Saturn</ion-option>
+        <form (ngSubmit)="createMaintenance()">
+            <ion-row>
+                <ion-col col-12>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Category</ion-label>
+                            <ion-select [(ngModel)]="category" [(ngModel)]="newMaintenance.category" name="category">
+                                <ion-option value="plumping">Plumping</ion-option>
+                                <ion-option value="electrical">Electrical</ion-option>
+                                <ion-option value="carpendar">Carpendar</ion-option>
+                                <ion-option value="civil">Civil</ion-option>
+                                <!-- <ion-option value="saturn">Sega Saturn</ion-option>
                     <ion-option value="snes">SNES</ion-option> -->
-                        </ion-select>
-                    </ion-item>
-                </ion-list>
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col col-12>
-                <ion-list>
-                    <ion-item>
-                        <ion-label>Sections</ion-label>
-                        <ion-select [(ngModel)]="section">
-                            <ion-option value="nes">Plumping</ion-option>
-                            <ion-option value="n64">Electrical</ion-option>
-                            <ion-option value="ps">Carpendar</ion-option>
-                            <ion-option value="genesis">Civil</ion-option>
-                            <!-- <ion-option value="saturn">Sega Saturn</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Sections</ion-label>
+                            <ion-select [(ngModel)]="section" [(ngModel)]="newMaintenance.section" name="section">
+                                <ion-option value="plumping">Plumping</ion-option>
+                                <ion-option value="electrical">Electrical</ion-option>
+                                <ion-option value="carpendar">Carpendar</ion-option>
+                                <ion-option value="civil">Civil</ion-option>
+                                <!-- <ion-option value="saturn">Sega Saturn</ion-option>
                   <ion-option value="snes">SNES</ion-option> -->
-                        </ion-select>
-                    </ion-item>
-                </ion-list>
-            </ion-col>
-            <ion-col col-12>
-                <label class="item item-input item-stacked-label">
+                            </ion-select>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col col-12>
+                    <label class="item item-input item-stacked-label">
                     <span class="input-label">Remarks</span>
 
-                    <ion-textarea row="4">
+                    <ion-textarea row="4" [(ngModel)]="newMaintenance.remarks" name="remarks">
                     </ion-textarea>
                 </label>
-            </ion-col>
-            <ion-col col-12>
-                <button ion-button block class="primeBtn">Apply</button>
-            </ion-col>
-        </ion-row>
+                </ion-col>
+                <ion-col col-12>
+                    <button ion-button type="submit" block class="primeBtn">Apply</button>
+                </ion-col>
+            </ion-row>
+        </form>
     </ion-grid>
 </ion-content>

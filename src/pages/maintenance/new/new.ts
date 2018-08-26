@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import {MaintenancePage} from '../maintenance';
+import {DataService} from '../../../service/data.service'
+import { Maintenance } from '../../../module/maintenance';
 
 /**
  * Generated class for the NewPage page.
@@ -16,8 +18,23 @@ import {MaintenancePage} from '../maintenance';
   templateUrl: 'new.html',
 })
 export class NewPage {
+  
+  newMaintenance = {} as Maintenance;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public nav:Nav) {
+  alert(message){
+    this.alertCtrl.create({
+      title:'Info',
+      subTitle:message,
+      buttons:['OK']
+    }).present()
+ }
+
+
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public nav:Nav,
+              private dataservice:DataService, 
+              private alertCtrl:AlertController) {
   }
 
   ionViewDidLoad() {
@@ -25,6 +42,13 @@ export class NewPage {
   }
   maintenance(){
     this.nav.setRoot(MaintenancePage);
+  }
+  createMaintenance() {
+    this.dataservice.createMaintenance(this.newMaintenance).subscribe(res=>{
+      console.log(res);
+      this.alert(res.message);
+      this.nav.setRoot(MaintenancePage);
+    })
   }
 
 }
