@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DataService} from '../../service/data.service';
+import {ShareService} from '../../service/share.service'
 
 /**
  * Generated class for the ProfilePage page.
@@ -15,12 +16,18 @@ import {DataService} from '../../service/data.service';
   templateUrl: 'profile.html',
 })
 export class ProfilePage {
-
-  profile={}
+  ProfileDetails:any;
+  currentUser:any;
+  profile={};
+  userId:any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              private dataservice:DataService) {
+              private dataservice:DataService,
+              private shareService:ShareService) {
+              this.userId=this.shareService.getUser()
+              this.currentUser=this.shareService.getCurrentProfile()
+              console.log(this.userId)
   }
 
   ionViewDidLoad() {
@@ -28,7 +35,9 @@ export class ProfilePage {
   }
 
   creatProfile(){
-    this.dataservice.createProfile(this.profile).subscribe(res=>{
+    this.ProfileDetails=Object.assign({},this.userId,this.profile)
+    console.log(this.ProfileDetails);
+    this.dataservice.createProfile(this.ProfileDetails).subscribe(res=>{
       console.log(res);
     })
   }

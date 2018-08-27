@@ -6,6 +6,7 @@ export class DataService {
 
     newMaintenace:any;
     profile:any;
+    currentprofile:any;
 
     constructor(
         private http:Http,
@@ -17,7 +18,11 @@ export class DataService {
         .map(result=>this.newMaintenace=result.json())
     }
     createProfile(value){
-        return this.http.post('http://fierce-inlet-19946.herokuapp.com/flatUsers/createProfile',value)
+        return this.http.post('http://localhost:4000/flatUsers/createProfile',value)
         .map(result=>this.profile=result.json())
+    }
+    findProfile(value){
+        return this.http.post('http://localhost:4000/flatUsers/findProfile',value)
+        .map(result=>this.currentprofile=result.json())
     }
 }

@@ -5,7 +5,9 @@ import {MaintenancePage} from '../maintenance/maintenance'
 import {RiseRequestPage} from '../rise-request/rise-request'
 import {NewsPage} from '../news/news';
 import {ComplaintsPage} from '../complaints/complaints';
-import {AngularFireAuth} from 'angularfire2/auth'
+import {AngularFireAuth} from 'angularfire2/auth';
+import {DataService} from '../../service/data.service'
+import {ShareService} from '../../service/share.service';
 
 /**
  * Generated class for the LandingpagePage page.
@@ -22,13 +24,19 @@ import {AngularFireAuth} from 'angularfire2/auth'
 export class LandingpagePage {
 
   email:String
+  userId={
+    uid:''
+  }
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public nav:Nav,
               private afauth:AngularFireAuth,
-              private toast:ToastController) {
-                this.email=afauth.auth.currentUser.email
+              private toast:ToastController,
+              private dataService:DataService,
+              private shareService:ShareService) {
+              this.email=afauth.auth.currentUser.email
+              this.userId.uid=afauth.auth.currentUser.uid;
   }
 
   ionViewDidLoad() {
@@ -47,6 +55,11 @@ export class LandingpagePage {
     //   }
      
     // })
+    this.dataService.findProfile(this.userId).subscribe(res=>{
+      console.log(res);
+      this.shareService.setCurrentProfile(res);
+
+    })
   }
   maintenace(){
     this.nav.setRoot(MaintenancePage);

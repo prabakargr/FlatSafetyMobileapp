@@ -28,7 +28,8 @@ import {AuthService} from '../service/auth.service';
 import { AngularFireAuthModule } from '../../node_modules/angularfire2/auth';
 import {FIREBASE_CONFIG} from './app.firebase.config'
 
-import {DataService} from '../service/data.service'
+import {DataService} from '../service/data.service';
+import {ShareService} from '../service/share.service';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import {DataService} from '../service/data.service'
     StatusBar,
     SplashScreen,
     DataService,
+    ShareService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthService,
   ]

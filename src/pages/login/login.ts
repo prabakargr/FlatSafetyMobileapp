@@ -7,6 +7,7 @@ import {LandingpagePage} from '../landingpage/landingpage';
 import { User } from '../../module/user';
 import {AngularFireAuth} from 'angularfire2/auth'
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import {ShareService} from '../../service/share.service';
 
 /**
  * Generated class for the LoginPage page.
@@ -22,13 +23,17 @@ import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 })
 export class LoginPage {
  
-   user={} as User
+   user={} as User;
+   userId={
+     uid:''
+   }
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public nav:Nav,
               private afauth:AngularFireAuth,
-              private alertCtrl:AlertController) {
+              private alertCtrl:AlertController,
+              private shareService:ShareService) {
   }
 
   ionViewDidLoad() {
@@ -49,6 +54,10 @@ export class LoginPage {
     .then(data=>{
       console.log('got some data',this.afauth.auth.currentUser);
       this.alert('Success! You\'re logged in'+"<br>"+this.afauth.auth.currentUser.email);
+      console.log(this.afauth.auth.currentUser.uid)
+      this.userId.uid=this.afauth.auth.currentUser.uid;
+      this.shareService.setUser(this.userId)
+      
       this.nav.setRoot(HomePage);
     })
     .catch(error=>{
