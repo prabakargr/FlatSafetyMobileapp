@@ -12,7 +12,7 @@ export class DataService {
         private http:Http,
     ) { }
 
-    baseUrl="http://fierce-inlet-19946.herokuapp.com";
+    baseUrl="https://flatsafety.herokuapp.com";
     // baseUrl="http://localhost:4000";
     createMaintenance(value){
         return this.http.post(this.baseUrl+'/maintenace/createManitenance',value)
