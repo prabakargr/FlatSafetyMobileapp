@@ -7,6 +7,7 @@ export class DataService {
     newMaintenace:any;
     profile:any;
     currentprofile:any;
+    updatedProfile:any;
 
     constructor(
         private http:Http,
@@ -25,5 +26,9 @@ export class DataService {
     findProfile(value){
         return this.http.post(this.baseUrl+'/flatUsers/findProfile',value)
         .map(result=>this.currentprofile=result.json())
+    }
+    updateProfile(value){
+        return this.http.post(this.baseUrl+'/flatUsers/updateProfile',value)
+        .map(result => this.updatedProfile=result.json())
     }
 }

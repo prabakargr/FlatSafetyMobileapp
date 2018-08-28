@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Nav } from 'ionic-angular';
 import {ShareService} from '../../service/share.service'
+import {DataService} from '../../service/data.service';
 
 /**
  * Generated class for the EditProfilePage page.
@@ -19,7 +20,8 @@ export class EditProfilePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public nav:Nav,
-              private shareService:ShareService) {
+              private shareService:ShareService,
+              private dataService:DataService) {
               this.currentUser=this.shareService.getCurrentProfile();
   }
 
@@ -27,6 +29,11 @@ export class EditProfilePage {
 
     console.log('ionViewDidLoad EditProfilePage');
     console.log(this.currentUser)
+  }
+  updateProfile(){
+    this.dataService.updateProfile(this.currentUser).subscribe(res=>{
+      console.log(res);
+    })
   }
 
 }
