@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,Nav } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Nav,AlertController } from 'ionic-angular';
 import {ShareService} from '../../service/share.service'
 import {DataService} from '../../service/data.service';
 
@@ -21,9 +21,18 @@ export class EditProfilePage {
               public navParams: NavParams,
               public nav:Nav,
               private shareService:ShareService,
-              private dataService:DataService) {
+              private dataService:DataService,
+              private alertCtrl:AlertController) {
               this.currentUser=this.shareService.getCurrentProfile();
   }
+
+  alert(message){
+    this.alertCtrl.create({
+      title:'Info',
+      subTitle:message,
+      buttons:['OK']
+    }).present()
+ }
 
   ionViewDidLoad() {
 
@@ -33,6 +42,8 @@ export class EditProfilePage {
   updateProfile(){
     this.dataService.updateProfile(this.currentUser).subscribe(res=>{
       console.log(res);
+      this.alert('Your profile Successfully'+"<br>"+"Updated");
+
     })
   }
 
