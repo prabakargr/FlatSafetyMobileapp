@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Nav } from 'ionic-angular';
 import {DataService} from '../../service/data.service';
 import {ShareService} from '../../service/share.service'
+import { LandingpagePage } from '../landingpage/landingpage';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ProfilePage page.
@@ -24,6 +26,7 @@ export class ProfilePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private dataservice:DataService,
+              public nav:Nav,
               private shareService:ShareService) {
               this.userId=this.shareService.getUser()
               this.currentUser=this.shareService.getCurrentProfile()
@@ -39,6 +42,7 @@ export class ProfilePage {
     console.log(this.ProfileDetails);
     this.dataservice.createProfile(this.ProfileDetails).subscribe(res=>{
       console.log(res);
+      this.nav.setRoot(HomePage)
     })
   }
 

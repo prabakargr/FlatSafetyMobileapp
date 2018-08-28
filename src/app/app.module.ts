@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import {LoginPage} from '../pages/login/login';
 import {RegisterPage} from '../pages/register/register';
 import {ProfilePage} from '../pages/profile/profile';
+import {EditProfilePage} from '../pages/edit-profile/edit-profile';
 import {LandingpagePage} from '../pages/landingpage/landingpage';
 import {MaintenancePage} from '../pages/maintenance/maintenance';
 import {NewPage}from '../pages/maintenance/new/new';
@@ -38,6 +39,7 @@ import {ShareService} from '../service/share.service';
     LoginPage,
     RegisterPage,
     ProfilePage,
+    EditProfilePage,
     LandingpagePage,
     MaintenancePage,
     NewPage,
@@ -66,6 +68,7 @@ import {ShareService} from '../service/share.service';
     LoginPage,
     RegisterPage,
     ProfilePage,
+    EditProfilePage,
     LandingpagePage,
     MaintenancePage,
     NewPage,

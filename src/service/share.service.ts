@@ -15,9 +15,9 @@ export class ShareService {
     }
     setCurrentProfile(value){
         this.currentProfile=value
+        console.log(this.currentProfile);
     }
     getCurrentProfile(){
         return this.currentProfile;
-        console.log(this.currentProfile)
     }
 }

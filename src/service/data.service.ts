@@ -12,17 +12,18 @@ export class DataService {
         private http:Http,
     ) { }
 
-
+    baseUrl="http://fierce-inlet-19946.herokuapp.com";
+    // baseUrl="http://localhost:4000";
     createMaintenance(value){
-        return this.http.post('http://fierce-inlet-19946.herokuapp.com/maintenace/createManitenance',value)
+        return this.http.post(this.baseUrl+'/maintenace/createManitenance',value)
         .map(result=>this.newMaintenace=result.json())
     }
     createProfile(value){
-        return this.http.post('http://localhost:4000/flatUsers/createProfile',value)
+        return this.http.post(this.baseUrl+'/flatUsers/createProfile',value)
         .map(result=>this.profile=result.json())
     }
     findProfile(value){
-        return this.http.post('http://localhost:4000/flatUsers/findProfile',value)
+        return this.http.post(this.baseUrl+'/flatUsers/findProfile',value)
         .map(result=>this.currentprofile=result.json())
     }
 }

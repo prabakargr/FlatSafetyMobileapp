@@ -4,6 +4,7 @@ import { Nav } from 'ionic-angular';
 import {MaintenancePage} from '../maintenance';
 import {DataService} from '../../../service/data.service'
 import { Maintenance } from '../../../module/maintenance';
+import {ShareService} from '../../../service/share.service';
 
 /**
  * Generated class for the NewPage page.
@@ -20,7 +21,8 @@ import { Maintenance } from '../../../module/maintenance';
 export class NewPage {
   
   newMaintenance = {} as Maintenance;
-
+  maintenanceWithProfile:any;
+  currentProfile:any;
   alert(message){
     this.alertCtrl.create({
       title:'Info',
@@ -34,7 +36,9 @@ export class NewPage {
               public navParams: NavParams,
               public nav:Nav,
               private dataservice:DataService, 
-              private alertCtrl:AlertController) {
+              private alertCtrl:AlertController,
+              private shareService:ShareService) {
+              this.currentProfile=this.shareService.getCurrentProfile();
   }
 
   ionViewDidLoad() {
@@ -44,7 +48,8 @@ export class NewPage {
     this.nav.setRoot(MaintenancePage);
   }
   createMaintenance() {
-    this.dataservice.createMaintenance(this.newMaintenance).subscribe(res=>{
+    this.maintenanceWithProfile=Object.assign({},this.newMaintenance,this.currentProfile)
+    this.dataservice.createMaintenance(this.maintenanceWithProfile).subscribe(res=>{
       console.log(res);
       this.alert(res.message);
       this.nav.setRoot(MaintenancePage);

@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import {LandingpagePage} from '../landingpage/landingpage';
 import {ProfilePage}from '../profile/profile'
+import {EditProfilePage} from '../edit-profile/edit-profile'
 import {LoginPage} from '../login/login';
 import {AngularFireAuth} from 'angularfire2/auth'
 
@@ -23,7 +24,7 @@ export class HomePage {
   break;
 
   case 'profile':
-  this.nav.setRoot(ProfilePage);
+  this.nav.setRoot(EditProfilePage);
   break;
   // case 'logout':
   // this.nav.setRoot(LoginPage)
