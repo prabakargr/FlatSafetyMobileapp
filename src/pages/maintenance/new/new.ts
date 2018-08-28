@@ -42,7 +42,7 @@ export class NewPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NewPage');
+    // console.log('ionViewDidLoad NewPage');
   }
   maintenance(){
     this.nav.setRoot(MaintenancePage);
@@ -50,7 +50,7 @@ export class NewPage {
   createMaintenance() {
     this.maintenanceWithProfile=Object.assign({},this.newMaintenance,this.currentProfile)
     this.dataservice.createMaintenance(this.maintenanceWithProfile).subscribe(res=>{
-      console.log(res);
+      // console.log(res);
       this.alert(res.message);
       this.nav.setRoot(MaintenancePage);
     })

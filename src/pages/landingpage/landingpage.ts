@@ -56,7 +56,7 @@ export class LandingpagePage {
      
     // })
     this.dataService.findProfile(this.userId).subscribe(res=>{
-      console.log(res);
+      // console.log(res);
       this.shareService.setCurrentProfile(res);
 
     })

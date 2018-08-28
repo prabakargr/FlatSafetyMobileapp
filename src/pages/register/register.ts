@@ -58,12 +58,12 @@ register(user){
   .then(data=>{
     this.userId.uid=this.afauth.auth.currentUser.uid;
     this.shareService.setUser(this.userId);
-    console.log('got data',data)
+    // console.log('got data',data)
     this.alert('Registered !')
     this.nav.setRoot(ProfilePage);
   })
   .catch(error=>{
-    console.log('got an error',error);
+    // console.log('got an error',error);
     this.alert(error.message);
   });
   console.log('would register user with',user.email,user.password)

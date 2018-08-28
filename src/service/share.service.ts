@@ -8,14 +8,14 @@ export class ShareService {
     constructor() { }
     setUser(value){
         this.user=value
-        console.log(this.user);
+        // console.log(this.user);
     }
     getUser(){
         return this.user;
     }
     setCurrentProfile(value){
         this.currentProfile=value
-        console.log(this.currentProfile);
+        // console.log(this.currentProfile);
     }
     getCurrentProfile(){
         return this.currentProfile;

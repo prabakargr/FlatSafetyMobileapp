@@ -34,14 +34,9 @@ export class EditProfilePage {
     }).present()
  }
 
-  ionViewDidLoad() {
-
-    console.log('ionViewDidLoad EditProfilePage');
-    console.log(this.currentUser)
-  }
+  ionViewDidLoad() { }
   updateProfile(){
     this.dataService.updateProfile(this.currentUser).subscribe(res=>{
-      console.log(res);
       this.alert('Your profile Successfully'+"<br>"+"Updated");
 
     })

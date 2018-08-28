@@ -30,18 +30,18 @@ export class ProfilePage {
               private shareService:ShareService) {
               this.userId=this.shareService.getUser()
               this.currentUser=this.shareService.getCurrentProfile()
-              console.log(this.userId)
+              // console.log(this.userId)
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
+    // console.log('ionViewDidLoad ProfilePage');
   }
 
   creatProfile(){
     this.ProfileDetails=Object.assign({},this.userId,this.profile)
-    console.log(this.ProfileDetails);
+    // console.log(this.ProfileDetails);
     this.dataservice.createProfile(this.ProfileDetails).subscribe(res=>{
-      console.log(res);
+      // console.log(res);
       this.nav.setRoot(HomePage)
     })
   }

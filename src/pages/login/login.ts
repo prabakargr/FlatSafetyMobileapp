@@ -36,9 +36,7 @@ export class LoginPage {
               private shareService:ShareService) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LoginPage');
-  }
+  ionViewDidLoad() { }
   alert(message){
      this.alertCtrl.create({
        title:'Info',
@@ -52,16 +50,16 @@ export class LoginPage {
   login(user){
     this.afauth.auth.signInWithEmailAndPassword(user.email,user.password)
     .then(data=>{
-      console.log('got some data',this.afauth.auth.currentUser);
+      // console.log('got some data',this.afauth.auth.currentUser);
       this.alert('Success! You\'re logged in'+"<br>"+this.afauth.auth.currentUser.email);
-      console.log(this.afauth.auth.currentUser.uid)
+      // console.log(this.afauth.auth.currentUser.uid)
       this.userId.uid=this.afauth.auth.currentUser.uid;
       this.shareService.setUser(this.userId)
       
       this.nav.setRoot(HomePage);
     })
     .catch(error=>{
-      console.log('got an error',error)
+      // console.log('got an error',error)
       this.alert(error.message);
     });
     console.log('would sign in with',user.email,user.password);
