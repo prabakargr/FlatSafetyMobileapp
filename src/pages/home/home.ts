@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,AlertController } from 'ionic-angular';
 import { Nav } from 'ionic-angular';
 import {LandingpagePage} from '../landingpage/landingpage';
 import {ProfilePage}from '../profile/profile'
@@ -12,10 +12,23 @@ import {AngularFireAuth} from 'angularfire2/auth'
   templateUrl: 'home.html'
 })
 export class HomePage {
+
+  email:String;
   public rootPage:any
   @ViewChild(Nav) nav: Nav;
   constructor(public navCtrl: NavController,
-              private afauth:AngularFireAuth) { }
+              private afauth:AngularFireAuth,
+              private alrtCtrl:AlertController) { 
+              this.email=afauth.auth.currentUser.email
+              }
+
+    alert(message){
+     this.alrtCtrl.create({
+       title:'Info',
+       subTitle:message,
+       buttons:['OK']
+     }).present()
+  }
 
   openPage(page){
   switch(page){
@@ -36,6 +49,7 @@ export class HomePage {
 logout(){
    this.afauth.auth.signOut();
    this.nav.setRoot(LoginPage);
+   this.alert("Signedout"+"<br>"+this.email)
 }
   ionViewDidLoad(){
     this.rootPage = LandingpagePage;
