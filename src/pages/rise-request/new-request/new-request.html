@@ -7,7 +7,7 @@
 <ion-header>
     <ion-toolbar>
         <button ion-button class="primeBtn">
-      <ion-icon (click)="request()" name="md-arrow-back"></ion-icon>
+      <ion-icon (click)="backTorequest()" name="md-arrow-back"></ion-icon>
     </button>
         <ion-title>Create Request</ion-title>
         <ion-buttons end>
@@ -21,36 +21,38 @@
 
 <ion-content padding>
     <ion-grid>
-        <ion-row>
-            <ion-col col-12>
-                <ion-item>
-                    <ion-label floating>Name</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
-            </ion-col>
-            <ion-col col-12>
-                <ion-item>
-                    <ion-label floating>Delivery Name</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
-            </ion-col>
-            <ion-col col-12>
-                <ion-item>
-                    <ion-label floating>Contact</ion-label>
-                    <ion-input type="text"></ion-input>
-                </ion-item>
-            </ion-col>
-            <ion-col col-12>
-                <label class="item item-input item-stacked-label">
+        <form (ngSubmit)="createRequest()">
+            <ion-row>
+                <ion-col col-12>
+                    <ion-item>
+                        <ion-label floating>Name</ion-label>
+                        <ion-input type="text" [(ngModel)]="riseRequest.contactperson" name="contactperson"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-12>
+                    <ion-item>
+                        <ion-label floating>Delivery Name</ion-label>
+                        <ion-input type="text" [(ngModel)]="riseRequest.deliveryname" name="deliveryname"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-12>
+                    <ion-item>
+                        <ion-label floating>Contact</ion-label>
+                        <ion-input type="text" [(ngModel)]="riseRequest.deliverycontact" name="deliverycontact"></ion-input>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-12>
+                    <label class="item item-input item-stacked-label">
                     <span class="input-label">Remarks</span>
                   
-                    <ion-textarea row="4">
+                    <ion-textarea row="4" type="text"  [(ngModel)]="riseRequest.remarks" name="remarks">
                     </ion-textarea>
                   </label>
-            </ion-col>
-            <ion-col col-12>
-                <button ion-button block class="primeBtn">Apply</button>
-            </ion-col>
-        </ion-row>
+                </ion-col>
+                <ion-col col-12>
+                    <button ion-button block class="primeBtn">Apply</button>
+                </ion-col>
+            </ion-row>
+        </form>
     </ion-grid>
 </ion-content>

@@ -7,7 +7,7 @@
 <ion-header>
     <ion-toolbar>
         <button ion-button class="primeBtn">
-            <ion-icon (click)="complaints()" name="md-arrow-back"></ion-icon>
+            <ion-icon (click)="backTocomplaints()" name="md-arrow-back"></ion-icon>
         </button>
         <ion-title>Add new Complaint</ion-title>
         <ion-buttons end>
@@ -21,17 +21,19 @@
 
 <ion-content padding>
     <ion-grid>
-        <ion-row>
-            <ion-col col-12>
-                <label class="item item-input item-stacked-label">
+        <form (ngSubmit)="createComplient()">
+            <ion-row>
+                <ion-col col-12>
+                    <label class="item item-input item-stacked-label">
                     <span class="input-label">Create a complaint</span>
-                    <ion-textarea row="4">
+                    <ion-textarea row="4" type="text" [(ngModel)]="complient.complientDetails" name="complientDetails" >
                     </ion-textarea>
                 </label>
-            </ion-col>
-            <ion-col col-12>
-                <button ion-button block class="primeBtn">Apply</button>
-            </ion-col>
-        </ion-row>
+                </ion-col>
+                <ion-col col-12>
+                    <button ion-button block type="submit" class="primeBtn">Apply</button>
+                </ion-col>
+            </ion-row>
+        </form>
     </ion-grid>
 </ion-content>

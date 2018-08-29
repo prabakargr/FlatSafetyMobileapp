@@ -8,13 +8,15 @@ export class DataService {
     profile:any;
     currentprofile:any;
     updatedProfile:any;
+    newRiseReq:any;
+    newComplient:any;
 
     constructor(
         private http:Http,
     ) { }
 
-    baseUrl="https://flatsafety.herokuapp.com";
-    // baseUrl="http://localhost:4000";
+    // baseUrl="https://flatsafety.herokuapp.com";
+    baseUrl="http://localhost:4000";
     createMaintenance(value){
         return this.http.post(this.baseUrl+'/maintenace/createManitenance',value)
         .map(result=>this.newMaintenace=result.json())
@@ -30,5 +32,13 @@ export class DataService {
     updateProfile(value){
         return this.http.post(this.baseUrl+'/flatUsers/updateProfile',value)
         .map(result => this.updatedProfile=result.json())
+    }
+    createNewRiseRequest(value){
+        return this.http.post(this.baseUrl+'/riseReqs/createRiseReq',value)
+        .map(result => this.newRiseReq=result.json())
+    }
+    createNewComplient(value){
+        return this.http.post(this.baseUrl+'/complients/createComplient',value)
+        .map(result => this.newComplient=result.json()) 
     }
 }
