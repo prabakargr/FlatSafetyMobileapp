@@ -10,6 +10,7 @@ export class DataService {
     updatedProfile:any;
     newRiseReq:any;
     newComplient:any;
+    allNews:any;
 
     constructor(
         private http:Http,
@@ -40,5 +41,9 @@ export class DataService {
     createNewComplient(value){
         return this.http.post(this.baseUrl+'/complients/createComplient',value)
         .map(result => this.newComplient=result.json()) 
+    }
+    getAllNews(){
+        return this.http.get(this.baseUrl+'/news/getAllNews')
+        .map(result=>this.allNews=result.json());
     }
 }

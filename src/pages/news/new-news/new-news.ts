@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Nav} from 'ionic-angular';
 import {NewsPage} from '../news';
+import {DataService} from '../../../service/data.service';
 
 
 /**
@@ -18,14 +19,22 @@ import {NewsPage} from '../news';
 })
 export class NewNewsPage {
 
+  allNews:any;
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
-              public nav:Nav
+              public nav:Nav,
+              private dataService:DataService
             ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewNewsPage');
+    this.dataService.getAllNews().subscribe(res=>{
+      this.allNews=res;
+      console.log(res);
+    })
+
   }
   news(){
     this.nav.setRoot(NewsPage);
