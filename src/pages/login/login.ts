@@ -53,6 +53,7 @@ export class LoginPage {
       // console.log('got some data',this.afauth.auth.currentUser);
       this.alert('Success! You\'re logged in'+"<br>"+this.afauth.auth.currentUser.email);
       // console.log(this.afauth.auth.currentUser.uid)
+      console.log(data);
       this.userId.uid=this.afauth.auth.currentUser.uid;
       this.shareService.setUser(this.userId)
       
